@@ -2,10 +2,13 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+
 import entities.Product;
-import util.ProductPredicate;
 
 public class ProgramRemoveIf {
+	
+	
 
 	public static void main(String[] args) {
 
@@ -16,12 +19,12 @@ public class ProgramRemoveIf {
 		products.add(new Product("Tablet", 350.50));
 		products.add(new Product("Hd Case", 89.90));
 		
-		//products.removeIf(p -> p.getPrice() >= 100);
-		//products.removeIf(p -> p.getPrice() >= 100);
+		double min = 100.0; // posso obter via teclado
 		
-		// method reference nameClass :: methodName
-		//products.removeIf(Product :: staticProductPredicate); 
-		products.removeIf(Product :: nonStaticProductPredicate); 
+		// variavel do tipo product
+		Predicate<Product> pred = p -> p.getPrice() >= min;
+		
+		products.removeIf(pred); 
 		
 		for (Product p : products) {
 			System.out.println(p);

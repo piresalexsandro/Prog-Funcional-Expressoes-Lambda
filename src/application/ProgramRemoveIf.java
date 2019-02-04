@@ -20,7 +20,8 @@ public class ProgramRemoveIf {
 		//products.removeIf(p -> p.getPrice() >= 100);
 		
 		// method reference nameClass :: methodName
-		products.removeIf(Product :: staticProductPredicate); 
+		//products.removeIf(Product :: staticProductPredicate); 
+		products.removeIf(Product :: nonStaticProductPredicate); 
 		
 		for (Product p : products) {
 			System.out.println(p);

@@ -2,16 +2,16 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
+import java.util.Locale;
 
 import entities.Product;
+import util.PriceUpdate;
 
-public class ProgramRemoveIf {
-	
-	
+public class ProgramConsumer {
 
 	public static void main(String[] args) {
 
+		Locale.setDefault(Locale.US);
 		List<Product> products = new ArrayList<>();
 		
 		products.add(new Product("TV", 900.00));
@@ -19,14 +19,9 @@ public class ProgramRemoveIf {
 		products.add(new Product("Tablet", 350.50));
 		products.add(new Product("Hd Case", 89.90));
 		
-		double min = 100.0; // posso obter via teclado
+		products.forEach(new PriceUpdate());
 		
-		// variavel do tipo product
-		products.removeIf(p -> p.getPrice() >= min); 
-		
-		for (Product p : products) {
-			System.out.println(p);
-		}
+		products.forEach (System.out::println);
 	}
 
 }

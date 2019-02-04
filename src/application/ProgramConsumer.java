@@ -19,7 +19,7 @@ public class ProgramConsumer {
 		products.add(new Product("Tablet", 350.50));
 		products.add(new Product("Hd Case", 89.90));
 		
-		products.forEach(Product::staticPriceUpdate);
+		products.forEach(Product::nonStaticPriceUpdate);
 		
 		products.forEach (System.out::println);
 	}

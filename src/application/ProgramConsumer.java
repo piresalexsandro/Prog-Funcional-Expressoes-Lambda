@@ -21,14 +21,7 @@ public class ProgramConsumer {
 		
 		double factor = 1.10;
 		
-		//Consumer<Product> cons = p -> p.setPrice(p.getPrice() * factor);
-		
-		//usa chaves quando a temos mais de uma linha (mais comum)
-		Consumer<Product> cons = p -> {
-			p.setPrice(p.getPrice() * factor);
-		};
-		
-		products.forEach(cons);
+		products.forEach(p -> p.setPrice(p.getPrice() * factor));
 		
 		products.forEach (System.out::println);
 	}

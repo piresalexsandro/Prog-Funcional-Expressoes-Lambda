@@ -22,7 +22,7 @@ public class ProgramFunction {
 
 		//products.stream().map(new UpperCaseName()); // transformando em stream
 		                       // lista => stream                        |    stream  => lista
-		List<String> prodNames = products.stream().map(new UpperCaseName()).collect(Collectors.toList()); // lista para stream e stream para lista
+		List<String> prodNames = products.stream().map(Product::staticUpperCaseName).collect(Collectors.toList()); // lista para stream e stream para lista
 		
 		prodNames.forEach(System.out::println);
 	}

@@ -26,33 +26,11 @@ public class Product /*implements Comparable<Product>*/{
 		this.price = price;
 	}
 	
-	public static boolean staticProductPredicate(Product p) {
-		return p.getPrice() >= 100.00;
+	public static String staticUpperCaseName(Product p) {
+		return p.getName().toUpperCase();
 	}
-	
-	public boolean nonStaticProductPredicate() {
-		return price >= 100.00;
-	}
-	
-	public static void staticPriceUpdate(Product p) {
-		p.setPrice(p.getPrice() * 1.10);
-	}
-	
-	public void nonStaticPriceUpdate() {
-		setPrice(getPrice() * 1.10);
-	}
-	
 	
 	public String toString() {
 		return name + ", " +String.format("%.2f", price);
 	}
-
-	/*@Override
-	public int compareTo(Product other) {
-		//return price.compareTo(other.getPrice());
-		return name.toUpperCase().compareTo(other.getName().toUpperCase());
-	}*/
-	
-	
-	
 }
